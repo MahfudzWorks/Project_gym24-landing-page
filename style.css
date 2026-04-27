@@ -113,7 +113,8 @@ nav ul li a:hover {
 
 /* Home */
 .home-container {
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -291,6 +292,15 @@ nav ul li a:hover {
   .advantages-group p {
     font-size: 14px;
   }
+
+  .advantages-group {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .advantages-img img {
+    margin-bottom: 10px;
+  }
 }
 
 .membership-container {
@@ -453,7 +463,8 @@ nav ul li a:hover {
   align-items: center;
   margin: 120px;
   color: white;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 100px;
   gap: 50px;
 }
 
@@ -593,8 +604,9 @@ nav ul li a:hover {
 
 .trainers-group img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+    height: auto;
+  object-fit: contain;
+
   border-radius: 10px;
   margin-bottom: 15px;
   background-color: #444;
