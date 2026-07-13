@@ -1,353 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gym24</title>
+    <title>Gym24 - Modern Fitness Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: '#d4ff00',
+              darkbg: '#0b0c10',
+              darkcard: '#1f2833'
+            }
+          }
+        }
+      }
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body>
-    <nav>
+  <body class="bg-darkbg text-gray-100 font-sans antialiased">
+    
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur-md border-b border-gray-800 px-6 py-4 flex justify-between items-center relative">
       <div class="navbar-logo">
-        <img src="img/GYM24 - logo.svg" alt="Logo GYM24" />
+        <img src="img/GYM24 - logo.svg" alt="Logo GYM24" class="h-8" />
       </div>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <div class="hamburger md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+        <span class="w-6 h-0.5 bg-gray-100 transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-gray-100 transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-gray-100 transition-all duration-300"></span>
       </div>
-      <ul id="nav-menu">
-        <li><a href="#advantages">Advantages</a></li>
-        <li><a href="#membership">Membership</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#trainers">Trainers</a></li>
+
+      <ul id="nav-menu" class="hidden md:flex md:space-x-8 text-sm font-semibold tracking-wide text-gray-400 absolute md:static top-full left-0 w-full md:w-auto bg-darkbg md:bg-transparent p-6 md:p-0 border-b border-gray-800 md:border-none flex-col md:flex-row space-y-4 md:space-y-0">
+        <li><a href="#advantages" class="hover:text-neon transition block">Advantages</a></li>
+        <li><a href="#membership" class="hover:text-neon transition block">Membership</a></li>
+        <li><a href="#about" class="hover:text-neon transition block">About</a></li>
+        <li><a href="#trainers" class="hover:text-neon transition block">Trainers</a></li>
       </ul>
     </nav>
-    <div id="home" class="home-container">
-      <div class="left fade-in-left">
-        <h1>Free trial sessions with a trainer</h1>
-        <a href="https://wa.me/6282140363716" target="_blank">
-          <button>Detailled</button>
+
+    <!-- HERO SECTION -->
+    <div id="home" class="max-w-7xl mx-auto px-6 py-16 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight leading-tight">
+          Free trial <span class="text-neon">sessions</span> with a trainer
+        </h1>
+        <p class="text-gray-400 text-lg">
+          Take the first step towards your dream body with guidance from our certified professionals.
+        </p>
+        <a href="https://wa.me/6282140363716" target="_blank" class="inline-block">
+          <button class="bg-neon text-black font-bold px-8 py-4 rounded-full uppercase tracking-wider text-sm hover:scale-105 hover:shadow-[0_0_20px_rgba(212,255,0,0.4)] transition duration-300">
+            Get Detailed Info
+          </button>
         </a>
       </div>
-      <div class="right fade-in-right">
-        <div class="home-gambar">
-          <img src="img/gambar-home.svg" alt="" />
+      <div class="flex justify-center">
+        <div class="relative bg-gradient-to-tr from-neon/20 to-transparent p-4 rounded-3xl">
+          <img src="img/gambar-home.svg" alt="Gym Motivation" class="w-full max-w-md rounded-2xl" />
         </div>
       </div>
     </div>
-    <div id="advantages" class="advantages-container">
-      <h1 class="fade-in-left">Reasons to join</h1>
-      <div class="advantages-information">
-        <div class="advantages-group fade-in-left">
-          <div class="advantages-img">
-            <img src="img/icon4.svg" alt="" />
+
+    <!-- ADVANTAGES -->
+    <div id="advantages" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800">
+      <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-12 text-center md:text-left">Reasons to join</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="flex gap-5 p-6 bg-darkcard rounded-2xl border border-gray-800 hover:border-neon/50 transition">
+          <div class="bg-darkbg p-4 rounded-xl h-fit">
+            <img src="img/icon4.svg" alt="" class="w-8 h-8" />
           </div>
-          <div class="advantages-text">
-            <h2>15000 sq.m.</h2>
-            <p>
-              A spacious gym for sports a safe distance between exercise
-              machines
-            </p>
-          </div>
-        </div>
-        <div class="advantages-group fade-in-right">
-          <div class="advantages-img">
-            <img src="img/icon3.svg" alt="" />
-          </div>
-          <div class="advantages-text">
-            <h2>4 fitness zones</h2>
-            <p>
-              From cardio to functional and cycle. Separate area for boxing and
-              mixed martial arts
-            </p>
+          <div>
+            <h3 class="text-xl font-bold mb-2">15000 sq.m.</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">A spacious gym for sports. A safe and comfortable distance between exercise machines.</p>
           </div>
         </div>
-        <div class="advantages-group fade-in-left">
-          <div class="advantages-img">
-            <img src="img/icon2.svg" alt="" />
+
+        <!-- Card 2 -->
+        <div class="flex gap-5 p-6 bg-darkcard rounded-2xl border border-gray-800 hover:border-neon/50 transition">
+          <div class="bg-darkbg p-4 rounded-xl h-fit">
+            <img src="img/icon3.svg" alt="" class="w-8 h-8" />
           </div>
-          <div class="advantages-text">
-            <h2>More than 200 equipment</h2>
-            <p>
-              No queues at the simulators. Premium equipment from LifeStyle,
-              Hammer Strength, TechnoGym.
-            </p>
-          </div>
-        </div>
-        <div class="advantages-group fade-in-right">
-          <div class="advantages-img">
-            <img src="img/icon1.svg" alt="" />
-          </div>
-          <div class="advantages-text">
-            <h2>Round-the-clock operation</h2>
-            <p>
-              The gym is open 24 hours a day, also works on all holidays and
-              weekends
-            </p>
+          <div>
+            <h3 class="text-xl font-bold mb-2">4 fitness zones</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">From cardio to functional and cycle. Separate area for boxing and mixed martial arts.</p>
           </div>
         </div>
+
+        <!-- Card 3 -->
+        <div class="flex gap-5 p-6 bg-darkcard rounded-2xl border border-gray-800 hover:border-neon/50 transition">
+          <div class="bg-darkbg p-4 rounded-xl h-fit">
+            <img src="img/icon2.svg" alt="" class="w-8 h-8" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">More than 200 equipment</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">No queues. Premium equipment from LifeStyle, Hammer Strength, and TechnoGym.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex gap-5 p-6 bg-darkcard rounded-2xl border border-gray-800 hover:border-neon/50 transition">
+          <div class="bg-darkbg p-4 rounded-xl h-fit">
+            <img src="img/icon1.svg" alt="" class="w-8 h-8" />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2">24/7 Operation</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">The gym is open 24 hours a day, working straight through all holidays and weekends.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div id="membership" class="membership-container">
-      <h1 class="fade-in-center">Gym membership</h1>
-      <div class="membership-information fade-in-center">
-        <div class="membership-group">
-          <h1>Pass 'Trial'</h1>
-          <div class="price">$0</div>
-          <ul>
-            <li>Access to the gym from 8:00 to 14:00</li>
-            <li>The trainer on duty will introduce you to the gym</li>
-          </ul>
-          <button>Buy</button>
+
+    <!-- MEMBERSHIP -->
+    <div id="membership" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800">
+      <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-12 text-center">Gym membership</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Pass Trial -->
+        <div class="bg-darkcard p-8 rounded-3xl border border-gray-800 flex flex-col justify-between hover:shadow-xl transition">
+          <div>
+            <h3 class="text-xl font-bold text-gray-400">Pass 'Trial'</h3>
+            <div class="text-4xl font-black my-4 text-neon">$0</div>
+            <ul class="space-y-3 text-sm text-gray-400 mb-8">
+              <li class="flex items-center gap-2">✓ Access from 8:00 to 14:00</li>
+              <li class="flex items-center gap-2">✓ Duty trainer introduction</li>
+            </ul>
+          </div>
+          <button class="w-full bg-gray-800 hover:bg-neon hover:text-black font-bold py-3 rounded-xl transition">Buy Now</button>
         </div>
-        <div class="membership-group">
-          <h1>Pass 'Easy Start'</h1>
-          <div class="price">$119</div>
-          <ul>
-            <li>Visit without restrictions 24/7</li>
-            <li>Individual training program</li>
-            <li>Access to the VTRAINER application</li>
-            <li>Trainer support</li>
-          </ul>
-          <button>Buy</button>
+
+        <!-- Pass Easy Start (Featured) -->
+        <div class="bg-darkcard p-8 rounded-3xl border-2 border-neon flex flex-col justify-between relative shadow-[0_0_30px_rgba(212,255,0,0.1)]">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-neon text-black text-xs font-black px-4 py-1 rounded-full uppercase">Most Popular</span>
+          <div>
+            <h3 class="text-xl font-bold text-white">Pass 'Easy Start'</h3>
+            <div class="text-4xl font-black my-4 text-neon">$119</div>
+            <ul class="space-y-3 text-sm text-gray-300 mb-8">
+              <li class="flex items-center gap-2">✓ Visit without restrictions 24/7</li>
+              <li class="flex items-center gap-2">✓ Individual training program</li>
+              <li class="flex items-center gap-2">✓ Access to VTRAINER app</li>
+              <li class="flex items-center gap-2">✓ Trainer support</li>
+            </ul>
+          </div>
+          <button class="w-full bg-neon text-black font-bold py-3 rounded-xl hover:opacity-90 transition">Buy Now</button>
         </div>
-        <div class="membership-group">
-          <h1>Pass 'Free Time'</h1>
-          <div class="price">$49</div>
-          <ul>
-            <li>The entrance time to the gym is from 14:00 to 16:00</li>
-            <li>Without suspension of gym membership</li>
-            <li>The trainer on duty will introduce you to the gym</li>
-          </ul>
-          <button>Buy</button>
+
+        <!-- Pass Free Time -->
+        <div class="bg-darkcard p-8 rounded-3xl border border-gray-800 flex flex-col justify-between hover:shadow-xl transition">
+          <div>
+            <h3 class="text-xl font-bold text-gray-400">Pass 'Free Time'</h3>
+            <div class="text-4xl font-black my-4 text-neon">$49</div>
+            <ul class="space-y-3 text-sm text-gray-400 mb-8">
+              <li class="flex items-center gap-2">✓ Entrance from 14:00 to 16:00</li>
+              <li class="flex items-center gap-2">✓ No membership suspension</li>
+              <li class="flex items-center gap-2">✓ Duty trainer introduction</li>
+            </ul>
+          </div>
+          <button class="w-full bg-gray-800 hover:bg-neon hover:text-black font-bold py-3 rounded-xl transition">Buy Now</button>
         </div>
-        <div class="membership-group">
-          <h1>Pass '1 Month 24/7'</h1>
-          <div class="price">$85</div>
-          <ul>
-            <li>Visit without restrictions 24/7</li>
-            <li>The trainer on duty will introduce you to the gym</li>
-          </ul>
-          <button>Buy</button>
-        </div>
-        <div class="membership-group">
-          <h1>Pass 'In Shape (AM)'</h1>
-          <div class="price">$165</div>
-          <ul>
-            <li>Training in mini-groups until 14:00</li>
-            <li>Without suspension of gym membership</li>
-            <li>Classes with a trainer in a mini-group 3 times a week</li>
-            <li>Trainer support</li>
-          </ul>
-          <button>Buy</button>
-        </div>
-        <div class="membership-group">
-          <div class="membership-title"></div>
-          <h1>Pass 'In Shape (PM)'</h1>
-          <div class="price">$195</div>
-          <ul>
-            <li>Training in mini-groups until 17:00</li>
-            <li>Without suspension of gym membership</li>
-            <li>Classes with a trainer in a mini-group 3 times a week</li>
-            <li>Trainer support</li>
-          </ul>
-          <button>Buy</button>
-        </div>
+
       </div>
     </div>
-    <div id="about" class="about-container">
-      <div class="left">
-        <h1 class="fade-in-left">About us</h1>
-        <p class="fade-in-left">
-          Gym24 is a leading fitness center located near Grushevka metro
-          station, offering over 1500 sq. m of space dedicated to
-          top-of-the-line workout equipment from leading brands such as Hammer
-          Strength, Life Fitness, and TechnoGym.
-          <br />
-          <br />
-          <br />
-          With affordable membership options, Gym24 is accessible to everyone
-          who wants to reach their fitness goals, whether it's building
-          strength, increasing endurance, or losing weight.
-          <br />
-          <br />
-          <br />
-          Certified trainers at Gym24 provide expert guidance and support to
-          develop personalized workout plans tailored to each individual's needs
-          and goals.
+
+    <!-- ABOUT -->
+    <div id="about" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h2 class="text-3xl md:text-4xl font-extrabold uppercase">About us</h2>
+        <p class="text-gray-400 leading-relaxed">
+          Gym24 is a leading fitness center located near Grushevka metro station, offering over 1500 sq. m of space dedicated to top-of-the-line workout equipment from leading brands such as Hammer Strength, Life Fitness, and TechnoGym.
+        </p>
+        <p class="text-gray-400 leading-relaxed">
+          Certified trainers at Gym24 provide expert guidance and support to develop personalized workout plans tailored to each individual's needs and goals.
         </p>
       </div>
-      <div class="right fade-in-right">
-        <div class="about-gambar">
-          <div class="slider">
-            <img src="img/photo.svg" alt="Image 1" class="slider-item" />
-            <img src="img/photo-1.svg" alt="Image 2" class="slider-item" />
-            <img src="img/photo-2.svg" alt="Image 3" class="slider-item" />
-            <img src="img/photo-3.svg" alt="Image 4" class="slider-item" />
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Grid Galeri Foto Gym -->
+        <img src="img/photo.svg" alt="Gym 1" class="rounded-xl w-full h-40 object-cover bg-gray-800" />
+        <img src="img/photo-1.svg" alt="Gym 2" class="rounded-xl w-full h-40 object-cover bg-gray-800" />
+        <img src="img/photo-2.svg" alt="Gym 3" class="rounded-xl w-full h-40 object-cover bg-gray-800" />
+        <img src="img/photo-3.svg" alt="Gym 4" class="rounded-xl w-full h-40 object-cover bg-gray-800" />
+      </div>
+    </div>
+
+    <!-- TRAINERS -->
+    <div id="trainers" class="max-w-7xl mx-auto px-6 py-20 border-t border-gray-800">
+      <h2 class="text-3xl md:text-4xl font-extrabold uppercase mb-12 text-center">Trainers staff</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Trainer 1 -->
+        <div class="bg-darkcard rounded-2xl overflow-hidden border border-gray-800 text-center p-6 group hover:border-neon transition">
+          <img src="img/trainer.svg" alt="Victoria" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 grayscale group-hover:grayscale-0 transition duration-300" />
+          <h3 class="text-lg font-bold">Victoria Shurpik</h3>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/instagram.svg" alt="" class="w-5 h-5" /></a>
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/twitter.svg" alt="" class="w-5 h-5" /></a>
           </div>
         </div>
+
+        <!-- Trainer 2 -->
+        <div class="bg-darkcard rounded-2xl overflow-hidden border border-gray-800 text-center p-6 group hover:border-neon transition">
+          <img src="img/trainer1.svg" alt="Elizabeth" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 grayscale group-hover:grayscale-0 transition duration-300" />
+          <h3 class="text-lg font-bold">Elizabeth Lavrinenko</h3>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/instagram.svg" alt="" class="w-5 h-5" /></a>
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/twitter.svg" alt="" class="w-5 h-5" /></a>
+          </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="bg-darkcard rounded-2xl overflow-hidden border border-gray-800 text-center p-6 group hover:border-neon transition">
+          <img src="img/trainer2.svg" alt="Ivan" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 grayscale group-hover:grayscale-0 transition duration-300" />
+          <h3 class="text-lg font-bold">Ivan Gladkikh</h3>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/instagram.svg" alt="" class="w-5 h-5" /></a>
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/twitter.svg" alt="" class="w-5 h-5" /></a>
+          </div>
+        </div>
+
+        <!-- Trainer 4 -->
+        <div class="bg-darkcard rounded-2xl overflow-hidden border border-gray-800 text-center p-6 group hover:border-neon transition">
+          <img src="img/trainer3.svg" alt="Lyudmila" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 grayscale group-hover:grayscale-0 transition duration-300" />
+          <h3 class="text-lg font-bold">Lyudmila Sabilo</h3>
+          <div class="flex justify-center gap-4 mt-4">
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/instagram.svg" alt="" class="w-5 h-5" /></a>
+            <a href="#" class="opacity-60 hover:opacity-100"><img src="img/twitter.svg" alt="" class="w-5 h-5" /></a>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div id="trainers" class="trainers-container">
-      <h1 class="fade-in-center">Trainers staff</h1>
-      <div class="trainers-information fade-in-center">
-        <div class="trainers-group">
-          <img src="img/trainer.svg" alt="" />
-          <h1>Victoria Shurpik</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-500 text-sm py-12 border-t border-gray-900">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div>
+          <img src="img/GYM24 - logo.svg" alt="Logo" class="h-6 mb-4" />
+          <p class="text-gray-400">Build strength and confidence at our gym with premium ecosystem.</p>
         </div>
-        <div class="trainers-group">
-          <img src="img/trainer1.svg" alt="" />
-          <h1>Elizabeth Lavrinenko</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer2.svg" alt="" />
-          <h1>Ivan Gladkikh</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer3.svg" alt="" />
-          <h1>Lyudmila Sabilo</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer4.svg" alt="" />
-          <h1>Evgeny Gurkov</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer5.svg" alt="" />
-          <h1>Anatoly Prytytsky</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer6.svg" alt="" />
-          <h1>Victor Ludkovich</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="trainers-group">
-          <img src="img/trainer7.svg" alt="" />
-          <h1>Maria Masyak</h1>
-          <ul>
-            <li>
-              <a href=""> <img src="img/instagram.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/twitter.svg" alt="" /></a>
-            </li>
-            <li>
-              <a href=""> <img src="img/youtube.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="img/GYM24 - logo.svg" alt="Logo" />
-          <p>
-            Build strength and confidence at our gym with state-of-the-art
-            equipment, personalized training, and a motivating community
-          </p>
-        </div>
-        <div class="footer-address">
-          <h1>Address</h1>
+        <div>
+          <h4 class="text-white font-bold mb-3">Address</h4>
           <p>Republic of Belarus Minsk city Dzerzhinsky Avenue 15</p>
         </div>
-        <div class="footer-contact">
-          <h1>Contact</h1>
-          <p>
-            <img src="img/icon_call.svg" alt="telepon" />
-            082140363716
-          </p>
-          <p>
-            <img src="img/icon_email.svg" alt="gmail" />
-            gym24@gmail.com
-          </p>
-          <h4>Media Sosial</h4>
-          <div class="social-icons">
-            <a href="#"><img src="img/facebook-f.svg" alt="facebook" /></a>
-            <a href="#"><img src="img/instagram-f.svg" alt="instagram" /></a>
-            <a href="#"><img src="img/twitter-f.svg" alt="twitter" /></a>
-            <a href="#"><img src="img/yt-f.svg" alt="youtube" /></a>
-          </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">Contact</h4>
+          <p class="mb-1">📞 082140363716</p>
+          <p>✉️ mahfudzworksss@gmail.com</p>
         </div>
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
